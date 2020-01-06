@@ -19,7 +19,7 @@ char	*check_precision(va_list args, t_var *var, const char *format)
 	if (*format == '*')
 	{
 		var->prec = va_arg(args, int);
-		if (var->zeros && var->prec > 0)
+		if (var->zeros && var->prec >= 0)
 			var->width = var->zeros;
 		if (var->prec >= 0)
 			var->zeros = var->prec;
